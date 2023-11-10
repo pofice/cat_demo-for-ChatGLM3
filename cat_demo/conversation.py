@@ -36,9 +36,9 @@ class Role(Enum):
             case Role.SYSTEM.value:
                 return
             case Role.USER.value:
-                return st.chat_message(name="user", avatar="user")
+                return st.chat_message(name="user", avatar="./me.jpg")
             case Role.ASSISTANT.value:
-                return st.chat_message(name="assistant", avatar="./abc123.jpg")
+                return st.chat_message(name="assistant", avatar="./cat1.jpg")
             case Role.TOOL.value:
                 return st.chat_message(name="tool", avatar="assistant")
             case Role.INTERPRETER.value:
