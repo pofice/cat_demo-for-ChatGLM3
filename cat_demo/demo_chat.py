@@ -43,7 +43,7 @@ def main(top_p: float, temperature: float, system_prompt: str, prompt_text: str)
         print(history)
 
         placeholder = st.empty()
-        message_placeholder = placeholder.chat_message(name="assistant", avatar="./abc123.jpg")
+        message_placeholder = placeholder.chat_message(name="assistant", avatar="./cat1.jpg")
         markdown_placeholder = message_placeholder.empty()
 
         output_text = ''
