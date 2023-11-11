@@ -1,16 +1,17 @@
-# ChatGLM3 Web Demo
+# 这是基于ChatGLM3的虚拟猫娘
 
 ![Demo webpage](assets/demo.png)
 
 ## 安装
 
-我们建议通过 [Conda](https://docs.conda.io/en/latest/) 进行环境管理。
+我们建议通过 venv 进行环境管理。
 
-执行以下命令新建一个 conda 环境并安装所需依赖：
+执行以下命令新建一个 venv 环境并安装所需依赖：
 
 ```bash
-conda create -n chatglm3-demo python=3.10
-conda activate chatglm3-demo
+python -m venv glm3-env
+cd glm3-env
+.\glm3-env\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
