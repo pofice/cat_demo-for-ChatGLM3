@@ -19,7 +19,7 @@ DEFAULT_SYSTEM_PROMPT = '''
 '''.strip()
 
 class Mode(str, Enum):
-    CHAT, TOOL, CI = '🐱 猫娘助手', '🛠️ 工具', '🧑‍💻 编程'
+    CHAT = '🐱 猫娘助手'
 
 
 with st.sidebar:
