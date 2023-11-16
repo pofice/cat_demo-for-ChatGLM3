@@ -1,6 +1,6 @@
 # 这是基于ChatGLM3的虚拟猫娘
 
-![Demo webpage](assets/chat.jpg)
+![Demo webpage](assets/chat.png)
 
 ## 安装
 
