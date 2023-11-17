@@ -17,12 +17,6 @@ pip install -r requirements.txt
 
 请注意，本项目需要 Python 3.10 或更高版本。
 
-此外，使用 Code Interpreter 还需要安装 Jupyter 内核：
-
-```bash
-ipython kernel install --name chatglm3-demo --user
-```
-
 ## 运行
 
 运行以下命令在本地加载模型并启动 demo：
@@ -33,13 +27,16 @@ streamlit run main.py
 
 之后即可从命令行中看到 demo 的地址，点击即可访问。初次访问需要下载并加载模型，可能需要花费一定时间。
 
-如果已经在本地下载了模型，可以通过 `export MODEL_PATH=/path/to/model` 来指定从本地加载模型。如果需要自定义 Jupyter 内核，可以通过 `export IPYKERNEL=<kernel_name>` 来指定。
+如果已经在本地下载了模型，可以通过 `export MODEL_PATH=/path/to/model` 来指定从本地加载模型
 
+例如，这是完整的在powershell的运行命令：
+
+```bash
+F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\cat_demo-for-ChatGLM3\ ; streamlit run main.py
+```
 ## 使用
 
-### 对话模式
-
-对话模式下，用户可以直接在侧边栏修改 top_p, temperature, System Prompt 等参数来调整模型的行为。例如
+用户可以直接在侧边栏修改 top_p, temperature, System Prompt 等参数来调整模型的行为
 
 
 ### 额外技巧
