@@ -11,7 +11,6 @@
 PowerShell
 ```bash
 python -m venv glm3-env
-cd glm3-env
 .\glm3-env\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
