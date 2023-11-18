@@ -38,6 +38,7 @@ F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\ca
 
 用户可以直接在侧边栏修改 top_p, temperature, System Prompt 等参数来调整模型的行为
 
+你可以根据你的需求来调整repetition_penalty的值。如果你希望生成的文本中有更多的变化，那么你可以将repetition_penalty设置为一个大于1.0的值。如果你不介意生成的文本中有一些重复的内容，那么你可以将repetition_penalty设置为1.0
 
 ### 额外技巧
 
