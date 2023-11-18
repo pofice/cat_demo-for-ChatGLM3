@@ -8,6 +8,7 @@
 
 执行以下命令新建一个 venv 环境并安装所需依赖：
 
+PowerShell
 ```bash
 python -m venv glm3-env
 cd glm3-env
@@ -29,20 +30,20 @@ streamlit run main.py
 
 如果已经在本地下载了模型，可以通过 `export MODEL_PATH=/path/to/model` 来指定从本地加载模型
 
-例如，这是完整的在powershell的运行命令：
+例如，这是完整的在PowerShell的运行命令：
 
 ```bash
 F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\cat_demo-for-ChatGLM3\ ; streamlit run main.py
 ```
 ## 使用
 
-用户可以直接在侧边栏修改 top_p, temperature, System Prompt 等参数来调整模型的行为
+- 用户可以直接在侧边栏修改 top_p, temperature, System Prompt 等参数来调整模型的行为
 
-你可以根据你的需求来调整repetition_penalty的值。如果你希望生成的文本中有更多的变化，那么你可以将repetition_penalty设置为一个大于1.0的值。
-如果你不介意生成的文本中有一些重复的内容，那么你可以将repetition_penalty设置为1.0
+  你可以根据你的需求来调整repetition_penalty的值。如果你希望生成的文本中有更多的变化，那么你可以将repetition_penalty设置为一个大于1.0的值。
+  如果你不介意生成的文本中有一些重复的内容，那么你可以将repetition_penalty设置为1.0
 
-如果repetition_penalty等于1.0，那么模型将不会对重复的内容进行惩罚，这可能会导致生成的文本中出现大量的重复内容。
-如果repetition_penalty大于1.0，那么模型将会对重复的内容进行惩罚，这将减少生成的文本中的重复内容。repetition_penalty的值越大，对重复内容的惩罚就越大，因此生成的文本中的重复内容就越少。
+  如果repetition_penalty等于1.0，那么模型将不会对重复的内容进行惩罚，这可能会导致生成的文本中出现大量的重复内容。
+  如果repetition_penalty大于1.0，那么模型将会对重复的内容进行惩罚，这将减少生成的文本中的重复内容。repetition_penalty的值越大，对重复内容的惩罚就越大，因此生成的文本中的重复内容就越少。
 
 ### 额外技巧
 
