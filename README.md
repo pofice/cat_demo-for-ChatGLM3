@@ -48,6 +48,10 @@ F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\ca
   
     如果你可以接受生成的文本中有一些重复的内容，或者你希望模型更加倾向于人设中的内容，那么你可以将repetition_penalty设置为一个小于1.0的值。
 
+  - 然而，要注意的是，repetition_penalty并不直接控制文本的多样性。如果你想直接增加生成文本的多样性，你可能需要调整其他的参数，例如temperature或top_p。
+  
+    temperature参数可以控制生成文本的随机性，top_p参数可以控制在采样时，选择概率最高的前P个字符。这两个参数的值越高，生成的文本的多样性就越高。
+
 ### 额外技巧
 
 - 在模型生成文本时，可以通过页面右上角的 `Stop` 按钮进行打断。
