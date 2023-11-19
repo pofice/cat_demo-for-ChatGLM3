@@ -43,6 +43,7 @@ F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\ca
 
   如果repetition_penalty等于1.0，那么模型将不会对重复的内容进行惩罚，这可能会导致生成的文本中出现大量的重复内容。
   如果repetition_penalty大于1.0，那么模型将会对重复的内容进行惩罚，这将减少生成的文本中的重复内容。repetition_penalty的值越大，对重复内容的惩罚就越大，因此生成的文本中的重复内容就越少。
+  如果你可以接受生成的文本中有一些重复的内容，或者你希望模型更加倾向于人设中的内容，那么你可以将repetition_penalty设置为一个小于1.0的值。
 
 ### 额外技巧
 
