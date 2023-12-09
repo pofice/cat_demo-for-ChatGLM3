@@ -8,6 +8,10 @@ st.set_page_config(
     initial_sidebar_state='collapsed', # 修改为 collapsed
 )
 
+# Add a button to clear the chat history
+if st.button('清空聊天记录'):
+    st.session_state['chat_history'] = []
+
 import demo_cat, demo_long, demo_sese
 
 DEFAULT_SYSTEM_PROMPT_CAT = '''
