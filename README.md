@@ -34,6 +34,9 @@ streamlit run main.py
 ```bash
 F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\cat_demo-for-ChatGLM3\ ; streamlit run main.py
 ```
+
+如需多卡部署，请参考client.py中的第149~155行
+
 ## 使用
 
 - 用户可以直接在侧边栏修改 top_p, temperature, System Prompt 等参数来调整模型的行为
