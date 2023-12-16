@@ -22,10 +22,10 @@ def append_conversation(
 def main(top_p: float, temperature: float, system_prompt: str, prompt_text: str, repetition_penalty: float):
     placeholder = st.empty()
     with placeholder.container():
-        if 'chat_history' not in st.session_state:
-            st.session_state.chat_history = []
+        if 'sese_chat_history' not in st.session_state:
+            st.session_state.sese_chat_history = []
 
-        history: list[Conversation] = st.session_state.chat_history
+        history: list[Conversation] = st.session_state.sese_chat_history
 
         for conversation in history:
             conversation.show()
