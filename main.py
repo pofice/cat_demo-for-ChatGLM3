@@ -11,6 +11,8 @@ st.set_page_config(
 # Add a button to clear the chat history
 if st.button('清空聊天记录'):
     st.session_state['chat_history'] = []
+    st.session_state['cat_chat_history'] = []
+    st.session_state['sese_chat_history'] = []
 
 import demo_cat, demo_long, demo_sese
 
