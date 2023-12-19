@@ -35,7 +35,7 @@ streamlit run main.py
 F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\cat_demo-for-ChatGLM3\ ; streamlit run main.py
 ```
 
-如需多卡部署，请参考client.py中的第149~155行
+模型默认多卡加载时自动切分模型
 
 ## 使用
 
