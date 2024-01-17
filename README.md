@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 运行以下命令在本地加载模型并启动 demo：
 
-```bash
+```
 streamlit run main.py
 ```
 
@@ -33,7 +33,7 @@ streamlit run main.py
 
 例如，这是完整的在PowerShell的运行命令：
 
-```bash
+```
 F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\cat_demo-for-ChatGLM3\ ; streamlit run main.py
 ```
 
