@@ -25,7 +25,9 @@ pip install -r requirements.txt
 streamlit run main.py
 ```
 
-之后即可从命令行中看到 demo 的地址，点击即可访问。初次访问需要下载并加载模型，可能需要花费一定时间。
+之后即可从命令行中看到 demo 的地址，点击即可访问。初次访问需要下载并加载模型，可能需要花费一定时间，因此建议提前下载好模型。
+
+从此下载模型：(https://huggingface.co/THUDM/chatglm3-6b)
 
 如果已经在本地下载了模型，可以通过 `export MODEL_PATH=/path/to/model` 来指定从本地加载模型
 
