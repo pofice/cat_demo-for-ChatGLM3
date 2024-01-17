@@ -4,8 +4,6 @@ from streamlit.delta_generator import DeltaGenerator
 from client import get_client
 from conversation import postprocess_text, preprocess_text, Conversation, Role
 
-MAX_LENGTH = 32768
-
 client = get_client()
 
 
@@ -19,31 +17,43 @@ def append_conversation(
     conversation.show(placeholder)
 
 
-def main(top_p: float, temperature: float, system_prompt: str, prompt_text: str, repetition_penalty: float):
+def main(
+        prompt_text: str,
+        system_prompt: str,
+        top_p: float = 0.8,
+        temperature: float = 0.95,
+        repetition_penalty: float = 1.0,
+        max_new_tokens: int = 1024,
+        retry: bool = False
+):
     placeholder = st.empty()
     with placeholder.container():
         if 'cat_chat_history' not in st.session_state:
             st.session_state.cat_chat_history = []
 
-        history: list[Conversation] = st.session_state.cat_chat_history
+    if prompt_text == "" and retry == False:
+        print("\n== Clean ==\n")
+        st.session_state.cat_chat_history = []
+        return
 
-        for conversation in history:
-            conversation.show()
+    history: list[Conversation] = st.session_state.cat_chat_history
+    for conversation in history:
+        conversation.show()
+
+    if retry:
+        print("\n== Retry ==\n")
+        last_user_conversation_idx = None
+        for idx, conversation in enumerate(history):
+            if conversation.role == Role.USER:
+                last_user_conversation_idx = idx
+        if last_user_conversation_idx is not None:
+            prompt_text = history[last_user_conversation_idx].content
+            del history[last_user_conversation_idx:]
+
 
     if prompt_text:
         prompt_text = prompt_text.strip()
         append_conversation(Conversation(Role.USER, prompt_text), history)
-
-        input_text = preprocess_text(
-            system_prompt,
-            tools=None,
-            history=history,
-        )
-        print("=== Input:")
-        print(input_text)
-        print("=== History:")
-        print(history)
-
         placeholder = st.empty()
         message_placeholder = placeholder.chat_message(name="assistant", avatar="./cat1.jpg")
         markdown_placeholder = message_placeholder.empty()
@@ -54,7 +64,7 @@ def main(top_p: float, temperature: float, system_prompt: str, prompt_text: str,
                 tools=None,
                 history=history,
                 do_sample=True,
-                max_length=MAX_LENGTH,
+                max_new_tokens=max_new_tokens,
                 temperature=temperature,
                 top_p=top_p,
                 stop_sequences=[str(Role.USER)],
@@ -62,9 +72,7 @@ def main(top_p: float, temperature: float, system_prompt: str, prompt_text: str,
         ):
             token = response.token
             if response.token.special:
-                print("=== Output:")
-                print(output_text)
-
+                print("\n==Output:==\n", output_text)
                 match token.text.strip():
                     case '<|user|>':
                         break
