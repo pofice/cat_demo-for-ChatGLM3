@@ -29,9 +29,7 @@ streamlit run main.py
 
 从此下载模型：https://huggingface.co/THUDM/chatglm3-6b
 
-如果已经在本地下载了模型，可以通过 `export MODEL_PATH=/path/to/model` 来指定从本地加载模型
-
-例如，这是完整的在PowerShell的运行命令：
+如果已经在本地下载了模型，可以通过 `export MODEL_PATH=/path/to/model` 来指定从本地加载模型。例如，这是完整的在PowerShell的运行命令：
 
 ```
 F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\cat_demo-for-ChatGLM3\ ; streamlit run main.py
