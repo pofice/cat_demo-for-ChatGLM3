@@ -58,6 +58,6 @@ F:\ChatGLM3\glm3-env\Scripts\Activate.ps1 ; $env:MODEL_PATH="G:\glm3" ; cd G:\ca
 ### 额外技巧
 
 - 在模型生成文本时，可以通过页面右上角的 `Stop` 按钮进行打断。
-- 刷新页面即可清空对话记录。
+- 刷新页面或使用侧边栏即可清空对话记录。
 
 # Enjoy!
